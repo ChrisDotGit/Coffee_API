@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <link rel="stylesheet" href="styles.css" />
+<head>
+    <meta charset="UTF-8">
+    <meta stylehs name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee</title>
+</head>
+<body onload="onPageStartup()">
+    <main>
+        <div id="flex_title">
+            <label class="title" for="flex_title">Select Coffee</label>
+        </div>
+
+        <div id="flex_dropdown">
+            <select name="dropdownchoice" id="choice" onchange="coffeeType(this)">
+                <option value="iced">Iced</option>
+                <option value="hot">Hot</option>
+                
+            </select>
+        </div>
+
+        <div id="flex_dropdown">
+            <select name="dropdown" id="dropdown" onchange="dropdownSelect(this)">
+            </select>
+        </div>
+
+        <div id="flex_image">
+            <img id="image" src="https://images.unsplash.com/photo-1494314671902-399b18174975?auto=format&fit=crop&q=80&w=1887&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="coffee image">
+        </div>
+
+        <div id="flex_description">
+            <label for="flex_description">Description</label>
+            <div id="Description"></div>
+        </div>
+
+        <div id="flex_ingredients">
+            <label for="flex_ingredients">Ingredients</label>
+            <div id="Ingredients"></div>
+            
+        </div>
+
+
+    </main>
+    <div id="hyperlink">
+        <span>API Link: </span>
+        <a href="https://sampleapis.com/api-list/coffee" target="_blank">https://sampleapis.com/api-list/coffee</a></div>
+   
+   
+   
+   <script src="script.js">
+        </script>
+
+</body>
+</html>

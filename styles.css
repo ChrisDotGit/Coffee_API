@@ -1,0 +1,102 @@
+
+html, body {
+    background-color: rgb(187, 187, 187);
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.1rem;
+    font-family: sans-serif;
+}
+
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: rgb(159, 64, 248);
+    padding: 5px;
+    width: 700px;
+    /* height: 820px; */
+    height: auto;
+    border-radius: 10px;
+}
+
+label {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: rgb(255, 242, 122);
+}
+
+#flex_dropdown {
+    display: flex;
+    height: 40px;
+    justify-content: center;
+}
+
+#dropdown, #choice {
+    height: 37px;
+    width: 300px;
+    text-align: center;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+
+#flex_title {
+    display: flex;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+    margin: 5px 5px 10px 5px;
+}
+
+.title{
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+    background-color: rgb(17, 17, 17);
+    padding: 2px 15px 2px 15px;
+    border-radius: 5px;
+    font-size: 1.3rem;
+}
+
+
+#flex_image {
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+}
+
+#image {
+    height: 300px;
+    width: 400px;
+    border: 4px solid rgb(255, 255, 255);
+}
+
+#flex_description {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    color: rgb(12, 2, 29);
+    padding: 5px;
+}
+
+#flex_ingredients {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    color: rgb(12, 2, 29);
+    padding: 5px;
+    margin-top: 10px;
+}
+
+#hyperlink {
+    font-size: 0.8rem;
+}
+
+a {
+    color: red;
+}
