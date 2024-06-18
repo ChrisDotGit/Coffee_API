@@ -1,5 +1,6 @@
-var api2 = '';
+var coffee_type = 'iced';
 
+// ON PAGE STARTUP
 function onPageStartup() {
     console.log("======PAGE STARTUP=======");
 
@@ -12,18 +13,15 @@ function onPageStartup() {
         )
 }
 
+// FETCH API
 function fetchCoffeeAPI() {
-    var fetchData = fetch("https://api.sampleapis.com/coffee/" + api2)
+    var fetchData = fetch("https://api.sampleapis.com/coffee/" + coffee_type)
     return fetchData.then(response =>response.json());
 
 }
 
-function displayOutput(item){
-    document.getElementById("Description").innerHTML = item.description;
-    document.getElementById("Ingredients").innerHTML = item.ingredients;
-    document.getElementById("image").src = item.image;
-}
 
+// DROPDOWN COFFEE SELECT EVENT
 function dropdownSelect(selected){
     var selected = selected.value
     fetchCoffeeAPI().then(
@@ -33,7 +31,25 @@ function dropdownSelect(selected){
         )
 }
 
+
+// DROPDOWN COFFEE TYPE EVENT
+function coffeeType(choice){
+    var selectedType = choice.value;
+    console.log(selectedType)
+    coffee_type = selectedType;
+    
+    fetchCoffeeAPI().then(
+        output => 
+            {getItems(output);
+             displayOutput(output[0]);
+            }
+        )
+}
+
+// POPULATE DROPDOWN OPTION
 function getItems(output){
+    // remove all options before adding the new options
+    deleteOptions();
     var ddown = document.getElementById("dropdown");
     for (var i=0; i<output.length; i++) {
         var option = document.createElement("option");
@@ -43,21 +59,22 @@ function getItems(output){
         option.value =  i;
         ddown.add(option);
     }
-    
+}
 
+function deleteOptions() {
+    const dropdown = document.getElementById('dropdown');
+
+    // Remove all options 
+    while (dropdown.options.length > 0) {
+        dropdown.remove(0);
+    }
 }
 
 
-function coffeeType(choice){
-    var selectedType = choice.value;
-    console.log(selectedType)
-    api2 = selectedType;
-    
-    fetchCoffeeAPI().then(
-        output => 
-            {getItems(output);
-             displayOutput(output[0]);
-            }
-        )
 
+// DISPLAY OUTPUT TO SCREEN
+function displayOutput(item){
+    document.getElementById("Description").innerHTML = item.description;
+    document.getElementById("Ingredients").innerHTML = item.ingredients;
+    document.getElementById("image").src = item.image;
 }
