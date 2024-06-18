@@ -48,7 +48,6 @@ function getItems(output){
 }
 
 
-
 function coffeeType(choice){
     var selectedType = choice.value;
     console.log(selectedType)
